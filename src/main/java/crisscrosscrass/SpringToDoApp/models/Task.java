@@ -1,8 +1,15 @@
 package crisscrosscrass.SpringToDoApp.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Task {
 
+    @NotNull
+    @Size(min=3,max=20)
     private String title;
+    @NotNull
+    @Size(min=1,message="Description should not be empty")
     private String description;
     private int taskId;
     private static int nextId = 1;

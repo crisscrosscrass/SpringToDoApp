@@ -5,12 +5,16 @@
 <h1 th:replace="fragments :: nameH1">Default title</h1>
 <nav th:replace="fragments :: navigation"></nav>
 <p>Add a Task to your List...</p>
-<form method="post" action="/save">
+<form method="post" action="/save" style="..." th:object="${task}">
     <div class="form-group">
-        <label for="Title-Field">Title</label>
-        <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-        <label for="Description-Field">Description</label>
-        <input type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <label th:for="title">Title</label>
+        <input class="form-control" th:field="*{title}">
+        <span th:errors="*{title}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="description">Description</label>
+        <input type="text" class="form-control" th:field="*{description}">
+        <span th:errors="*{description}" class="error"></span>
     </div>
     <input type="submit" value="Add Item" class="btn btn-outline-success" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
 </form>
