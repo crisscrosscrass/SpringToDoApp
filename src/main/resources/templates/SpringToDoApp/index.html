@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:replace="fragments :: nameH1">Default title</h1>
+<nav th:replace="fragments :: navigation"></nav>
+<p th:unless="${myTodoList} and ${myTodoList.size()}">No task available...</p>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="task : ${myTodoList}">
+        <td th:text="${task.title}"></td>
+        <td th:text="${task.description}"></td>
+    </tr>
+</table>
+</body>
+</html>

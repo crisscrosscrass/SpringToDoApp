@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:replace="fragments :: nameH1">Default title</h1>
+<nav th:replace="fragments :: navigation"></nav>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Remove a Task from your List</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="/" class="card-link">Back to Overview</a>
+    </div>
+</div>
+<form method="post" action="/delete">
+    <div th:each="task : ${myTodoList}" class="checkbox">
+        <input type="checkbox" name="taskIds" th:value="${task.taskId}" id="${task.taskId}">
+        <label th:for="${task.taskId}" th:text="${task.title}"></label>
+        <br>
+    </div>
+    <input type="submit" value="Delete Task" class="btn btn-outline-danger">
+</form>
+</body>
+</html>

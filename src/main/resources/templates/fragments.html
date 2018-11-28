@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title th:text="${title}">My ToDo App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+</head>
+<body>
+<h1 th:fragment="nameH1">My ToDoApp</h1>
+<nav th:fragment="navigation">
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <a href="/" class="btn btn-info">Overview</a>
+    <a href="/add" class="btn btn-success">Add ToDo</a>
+    <a href="/remove" class="btn btn-danger">Remove ToDo</a>
+    </div>
+</nav>
+</body>
+</html>

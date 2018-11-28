@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:replace="fragments :: nameH1">Default title</h1>
+<nav th:replace="fragments :: navigation"></nav>
+<p>Add a Task to your List...</p>
+<form method="post" action="/save">
+    <div class="form-group">
+        <label for="Title-Field">Title</label>
+        <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <label for="Description-Field">Description</label>
+        <input type="text" name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <input type="submit" value="Add Item" class="btn btn-outline-success" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
+</form>
+</body>
+</html>
