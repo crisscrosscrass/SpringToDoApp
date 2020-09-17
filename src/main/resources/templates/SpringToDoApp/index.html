@@ -9,10 +9,15 @@
     <tr>
         <th>Title</th>
         <th>Description</th>
+        <th>Actions</th>
     </tr>
     <tr th:each="task : ${myTodoList}">
         <td th:text="${task.title}"></td>
         <td th:text="${task.description}"></td>
+        <form action="#" th:action="@{/delete}" method="post">
+        <!--form method="post" action="/delete" method="post"-->
+            <td><input name="taskIds" th:value="${task.taskId}" type="hidden"/><button type="submit" class="removebutton" name="action" value="remove">Delete</button></td>
+        </form>
     </tr>
 </table>
 </body>
